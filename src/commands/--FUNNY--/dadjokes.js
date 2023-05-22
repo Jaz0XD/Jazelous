@@ -1,0 +1,77 @@
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("dadjoke")
+    .setDescription("Sends a boring dad joke"),
+
+  async execute(interaction, client) {
+    const dadjokes = [
+      "What do you call a fish with no eyes? ||Fsh||.",
+      "What should you do if you meet a giant? ||Use big words||.",
+      "What do you call a cow with two legs? ||Lean beef||.",
+      "What sits on the seabed and has anxiety? ||A nervous wreck||.",
+      "What do you call a man wearing a rug on his head? ||Matt||.",
+      "What's the best air to breathe if you want to be rich? ||Millionaire||.",
+      "Why did the girl toss a clock out the window? ||She wanted to see time fly||.",
+      "Where do armies belong? ||In your sleeves||.",
+      "What did one plate say to another plate? ||Tonight, dinner's on me||.",
+      "Did you hear about the king that went to the dentist? ||He needed to get crowns||.",
+      "What happens when doctors get frustrated? ||They lose their patients||.",
+      "What do you call a bear with no teeth? ||A gummy bear||.",
+      "What invention allows us to see through walls? ||Windows||.",
+      "What's orange and sounds like a parrot? ||A carrot||.",
+      "Why did the coach go to the bank? ||To get his quarter back||.",
+      "Why do nurses like red crayons? ||Sometimes they have to draw blood||.",
+      "What kind of jewelry do rabbits wear? ||14 carrot gold||.",
+      "Why can't the sailor learn the alphabet? ||Because he kept getting lost at C||.",
+      "What do you call a cheese that isn't yours? ||Nacho cheese||!",
+      "How do celebrities keep cool? ||They have many fans||.",
+      "What did the janitor say when he jumped out of the closet? ||Supplies||!",
+      "Why did the boy bring a ladder on the bus? ||He wanted to go to high school||.",
+      "Why did the golfer bring two pairs of pants? ||Just in case he got a hole in one||.",
+      "Why did the cowboy adopt a wiener dog? ||He wanted to get a long little doggy||.",
+      "How did the barber win the race? ||He knew a shortcut||.",
+      "What's more unbelievable than a talking dog? ||A spelling bee||.",
+      "What do you call a cow with no legs? ||Ground beef||.",
+      "What do you call a happy cowboy? ||A jolly rancher||.",
+      "Why shouldn't you trust trees? ||They seem shady||.",
+      "How do you fix a broken tomato? ||With tomato paste||.",
+      "What kind of music scares balloons? ||Pop music||.",
+      "Why did the orange stop halfway across the road? ||It ran out of juice||.",
+      "What do clouds wear? ||Thunderwear||.",
+      "Why are piggy banks so wise? ||They're filled with common cents||.",
+      "Why is Peter Pan always flying? ||He neverlands||.",
+      "How do you get a good price on a sled? ||You have toboggan||.",
+      "How can you tell if a tree is a dogwood tree? ||By its bark||.",
+      "I used to hate facial hair, but then it grew on me.",
+      "It's inappropriate to make a 'dad joke' if you're not a dad. ||It's a faux pa||.",
+      "What do you call a hot dog on wheels? ||Fast food||!",
+      "Where do young trees go to learn? ||Elementree school||.",
+      "Did you hear about the circus fire? ||It was in tents||.",
+      "Can February March? ||No, but April May||!",
+      "How do lawyers say goodbye? ||We'll be suing ya||!",
+      "Wanna hear a joke about paper? ||Never mind—it's tearable||.",
+      "What's the best way to watch a fly fishing tournament? ||Live stream||.",
+      "Spring is here! I got so excited I wet my plants.",
+      "I could tell a joke about pizza, but it's a little cheesy.",
+      "Don't trust atoms. ||They make up everything!||",
+      "When does a joke become a dad joke? ||When it becomes apparent.||",
+      "I wouldn't buy anything with velcro. It's a total rip-off.",
+      "What's an astronaut's favorite part of a computer? ||The space bar.||",
+      "I don't play soccer because I enjoy the sport. I'm just doing it for kicks!",
+      "Why are elevator jokes so classic and good? ||They work on many levels||.",
+      "Why do bees have sticky hair? ||Because they use a honeycomb||.",
+      "Which state has the most streets? ||Rhode Island||.",
+      "What did the coffee report to the police? ||A mugging||.",
+      "What did the fish say when he hit the wall? ||Dam||.",
+      "Is this pool safe for diving? ||It deep ends||.",
+      "If you see a crime happen at the Apple store, what does it make you? ||An iWitness||.",
+    ];
+
+    let ranDadjoke = dadjokes[Math.floor(Math.random() * dadjokes.length)];
+    await interaction.reply({
+      content: `${ranDadjoke}`,
+    });
+  },
+};
