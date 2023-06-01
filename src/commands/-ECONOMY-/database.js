@@ -9,8 +9,8 @@ module.exports = {
   async execute(interaction, client) {
     let guildProfile = await Guild.findOne({ guildId: interaction.guild.id });
     if (!guildProfile) {
-      guildProfile = new Guild({
-        _id: new mongoose.Types.ObjectId(),
+      guildProfile = await new Guild({
+        _id: mongoose.Types.ObjectId(),
         guildId: interaction.guild.id,
         guildName: interaction.guild.name,
         guildIcon: interaction.guild.iconURL()

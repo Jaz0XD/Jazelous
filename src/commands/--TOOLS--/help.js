@@ -22,19 +22,19 @@ module.exports = {
         {
           name: "Admin",
           value:
-            "Ban - Bans a user\nKick - Kicks a user\nTimeout - Mutes a user from all channels",
+            "Ban - Bans a user\nKick - Kicks a user\nTimeout - Mutes a user from all channels\nPurge - Clears a set of messages\nWarn - Warn a user\Warnings - Check a user's warning\nClearwarn - remove a user's warning\nlock - Lock a channel\nUnlock - Unlock a channel",
           inline: false,
         },
         {
           name: "Utils",
           value:
-            "Help - This command\nAbout - Jazelous in brief\nJaz - Description of JazXD\nRoles- A list of all roles\nWelc - Welcome a user\nAvatar - Get a user's avatar",
+            "Help - This command\nAbout - Jazelous in brief\nJaz - Description of JazXD\nRoles- A list of all roles\nWelc - Welcome a user\nAvatar - Get a user's avatar\nWhois - Find who this person is\nChatGPT - Ask the GPT a question\nDict - Get a pocket dictionary\nImage-Generator - Generate an AI image",
           inline: false,
         },
         {
           name: "Fun",
           value:
-            "Ping - Pong\nFlip - Flip a coin\nPat - Pat a user\nSlap - Slap a user\nPandas - Panda GIF **(REMOVED)**\nSeals - Seal GIF **(REMOVED)**\nMsg - Anonymous bot message\nDadjokes - Random dadjokes\nPick - A Character randomizer",
+            "Ping - Pong\nFlip - Flip a coin\nPat - Pat a user\nSlap - Slap a user\nPandas - Panda GIF\nSeals - Seal GIF\nMsg - Anonymous bot message\nDadjokes - Random dadjokes\nPick - A Character randomizer\nMeme - Sends a random Reddit meme\n8ball - Roll the ball with question\nEnlarge - Get a larger size emoji\nHangman - Play the awesome Hangman game",
           inline: false,
         },
         {

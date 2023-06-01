@@ -63,7 +63,7 @@ module.exports = {
         {
           name: "ROLES",
           value:
-            "<@&1095419464419381390>\nFOUNDER of XDF - <@759985755585773610>\n\n<@&1044306028780605460>\nManaging Directors of Dev Team\n\n<@&1092167575477166091>\nXDF Discord moderation team\n\n<@&1092167662911635586>\nGameHub Cafélord\n\n<@&1095359583800803388>\nYouTube Channel Moderation Team\n\n<@&1092166835505471598>\nTwtich Channel Moderation Team\n\n<@&1101175330573668442>\nGameHub Squad\n",
+            "<@&1095419464419381390>\nFOUNDER of XDF - <@759985755585773610>\n\n<@&1044306028780605460>\nManaging Directors of Dev Team\n\n<@&1092167575477166091>\nXDF Discord moderation team\n\n<@&1092167662911635586>\nGameHub Cafélord\n\n<@&1095359583800803388>\nYouTube Channel Moderation Team\n\n<@&1092166835505471598>\nTwtich Channel Moderation Team\n\n<@&1101175330573668442>\nGameHub Squad\n\n<@&1069647685889572945>\nDiscord Community members",
         }
       )
       .setColor(0xecfc03)

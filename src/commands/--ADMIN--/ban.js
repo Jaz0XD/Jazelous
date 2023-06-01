@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js");
+﻿const { SlashCommandBuilder, PermissionsBitField } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -17,7 +17,11 @@ module.exports = {
     ),
   async execute(interaction, client) {
 
-    if (!interaction.member.hasPermission("ADMINISTRATOR")) {
+      if (
+          !interaction.member.permissions.has(
+              PermissionsBitField.Flags.Administrator
+          )
+      ) {
       return interaction.reply({
         content: "You don't have permission to use this command!",
         ephemeral: true,
@@ -38,9 +42,15 @@ module.exports = {
         reason: reason,
       })
       .catch(console.error);
-
-    await interaction.reply({
-      content: `${user.tag} has been banned!`,
-    });
+      const embed = new EmbedBuilder()
+          .setColor("DarkRed")
+          .setDescription(
+              `🔴 **---------- BANNED ----------** 🔴\n\n**USER:** ${user.tag}\n\n**REASON:** ${reason}\n\n**BY:** ${interaction.user}`
+          )
+          .setTimestamp();
+      await interaction.reply({
+          embeds: [embed],
+      });
+    
   },
 };

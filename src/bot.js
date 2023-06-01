@@ -1,13 +1,14 @@
 require("dotenv").config();
-
 const { JAZELOUS_TOKEN, databaseToken } = process.env;
 const { connect } = require("mongoose");
 const { Player } = require("discord-player");
-const { Client, Collection, GatewayIntentBits } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, PermissionFlagsBits, Permissions, MessageManager, Embed, Events } = require("discord.js");
 const fs = require("fs");
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 const { EmbedBuilder } = require("@discordjs/builders");
+const { QuickDB } = require('quick.db')
+
 //const { YoutubePoster } = require("discord-youtube");
 
 const client = new Client({
@@ -16,6 +17,7 @@ const client = new Client({
 
 client.commands = new Collection();
 client.buttons = new Collection();
+client.selectMenus = new Collection();
 client.commandArray = [];
 
 const functionFolders = fs.readdirSync(`./src/functions`);
@@ -32,6 +34,20 @@ client.distube = new DisTube(client, {
   emitAddSongWhenCreatingQueue: false,
   plugins: [new SpotifyPlugin()],
 });
+
+const db = new QuickDB();
+
+
+client.on(Events.GuildMemberAdd, async (member) => {
+    const channelID = await db.get(`welchannel_${member.guild.id}`)
+    const channel = member.guild.channels.cache.get(channelID)
+    const message = `**Welcome to the server, ${member}**`
+
+    if (channelID == null) return;
+
+    channel.send(message)
+})
+
 // client.ytp = new YoutubePoster(client, {
 //   loop_delay_in_min: 1,
 // });
@@ -65,11 +81,11 @@ client.distube = new DisTube(client, {
 //   if (!channel) return console.error("Invalid channel ID.");
 
 //   const embed = new EmbedBuilder()
-//     .setTitle("I SPAM TILL CHAT IS ALIVE")
+//     .setTitle("<@840220285419388989>")
 //     .setColor(0xfa513e);
 
-//   channel.send({ embeds: [embed] }).catch(console.error);
-// }, 15 * 60 * 1000); // 15 mins
+//   channel.send("<@714512199523237938>").catch(console.error);
+// }, 1000); // 1 sec
 
 client.handleEvents();
 client.handleCommands();
